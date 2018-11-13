@@ -19,6 +19,11 @@ var loss = false;
 
 startGame();
 
+function startGame() {
+    createCells();
+    drawAllCells();
+}
+
 
 function cell(row, coll) {
     this.value = 0;
@@ -64,5 +69,12 @@ function  drawCell(cell) {
         ctx.textAlign = "center";
         ctx.fillText(cell.value, cell.x + width / 2, cell.y + width / 2);
     }
-    
+}
+
+function drawAllCells() {
+    for(var 1 = 0; 1 < size; i++) {
+        for (var j = 0; j < size; j++) {
+            drawCell(cells[i][j]);
+        }
+    }
 }
