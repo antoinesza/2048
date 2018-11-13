@@ -27,8 +27,8 @@ function startGame() {
 
 function cell(row, coll) {
     this.value = 0;
-    this.x = coll * width + 5 * (coll + 1);
-    this.y = row * width + 5 * (row +1);
+    this.x = coll * width + 6 * (coll + 1);
+    this.y = row * width + 6 * (row +1);
 }
 
 function createCells() {
@@ -45,19 +45,19 @@ function  drawCell(cell) {
     ctx.rect(cell.x, cell.y, width, width);
 
     switch (cell.value) {
-        case 0 : ctx.fillStyle = "#ffb3ac"; break;
-        case 2 : ctx.fillStyle = "#00ff96"; break;
-        case 4 : ctx.fillStyle = "#0027ff"; break;
-        case 8 : ctx.fillStyle = "#f49100"; break;
-        case 16 : ctx.fillStyle = "#d10200"; break;
-        case 32 : ctx.fillStyle = "#1bff14"; break;
-        case 64 : ctx.fillStyle = "#00ffb9"; break;
-        case 128 : ctx.fillStyle = "#0089ff"; break;
-        case 256 : ctx.fillStyle = "#9100ff"; break;
-        case 512 : ctx.fillStyle = "#ff0070"; break;
-        case 1024 : ctx.fillStyle = "#ff0042"; break;
-        case 2048 : ctx.fillStyle = "#ff6e00"; break;
-        case 4096 : ctx.fillStyle = "#e4ff00"; break;
+        case 0 : ctx.fillStyle = "#FF0000"; break;
+        case 2 : ctx.fillStyle = "#FF0033"; break;
+        case 4 : ctx.fillStyle = "#FF00A6"; break;
+        case 8 : ctx.fillStyle = "#DE00FF"; break;
+        case 16 : ctx.fillStyle = "#6F00FF"; break;
+        case 32 : ctx.fillStyle = "#003CFF"; break;
+        case 64 : ctx.fillStyle = "#00EBFF"; break;
+        case 128 : ctx.fillStyle = "#00FF8D"; break;
+        case 256 : ctx.fillStyle = "#00FF22"; break;
+        case 512 : ctx.fillStyle = "#7CFF00"; break;
+        case 1024 : ctx.fillStyle = "#F7FF00"; break;
+        case 2048 : ctx.fillStyle = "#FF7C00"; break;
+        case 4096 : ctx.fillStyle = "#FF2F00"; break;
         default : ctx.fillStyle = "FFFFFF";
     }
 
@@ -65,14 +65,14 @@ function  drawCell(cell) {
     if (cell.value) {
         fontSize = width / 2;
         ctx.font = fontSize + "px Arial"
-        ctx.fillStyle = "White";
+        ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.fillText(cell.value, cell.x + width / 2, cell.y + width / 2);
     }
 }
 
 function drawAllCells() {
-    for(var 1 = 0; 1 < size; i++) {
+    for(var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             drawCell(cells[i][j]);
         }
