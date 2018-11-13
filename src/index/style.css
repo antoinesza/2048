@@ -30,3 +30,7 @@ h1 {
 #canvas {
   background-color: burlywood;
 }
+#canvas-bloc {
+    margin-left: -250px;
+    padding-left: 50%;
+}
