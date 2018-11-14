@@ -1,35 +1,16 @@
-
-
-
-
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContent("2d");
-
-var sizeInput = document.getElementById("size");
-var changeSize = document.getElementById("Change-size");
-var scoreLabel = document.getElementById("score");
-
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var sizeInput = document.getElementById('size');
+var changeSize = document.getElementById('change-size');
+var scoreLabel = document.getElementById('score');
 var score = 0;
 var size = 4;
-var width  = canvas.width / size = 6;
-
+var width = canvas.width / size - 6;
 var cells = [];
 var fontSize;
 var loss = false;
-
 startGame();
 
-startGame();
-
-changeSize.onclick = function () {
-    if (sizeInput.value >= 2 && sizeInput.value <= 20) {
-        size = sizeInput.value;
-        width = canvas.width / size - 6;
-        console.log(sizeInput.value);
-        canvasClean();
-        startGame();
-    }
-}
 
 function cell(row, coll) {
     this.value = 0;
