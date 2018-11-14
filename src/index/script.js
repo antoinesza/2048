@@ -11,7 +11,7 @@ var scoreLabel = document.getElementById("score");
 
 var score = 0;
 var size = 4;
-var width  = canvas.width / size = 5;
+var width  = canvas.width / size = 6;
 
 var cells = [];
 var fontSize;
@@ -40,7 +40,7 @@ function createCells() {
     }
 }
 
-function  drawCell(cell) {
+function drawCell(cell) {
     ctx.beginPath();
     ctx.rect(cell.x, cell.y, width, width);
 
@@ -79,4 +79,14 @@ function drawAllCells() {
     }
 }
 
-https://www.youtube.com/watch?v=tveTp3w3Wsg
+function pasteNewCell () {
+    while (true) {
+        var row = Math.floor(Math.random() * size);
+        var coll = Math.floor(Math.random() * size);
+        if(!cell([row][coll].value)) {
+            cells[row][coll].value = 2 * Math.ceil(Math.random() * 2);
+            drawAllCells()
+            return;
+        }
+    }
+}
