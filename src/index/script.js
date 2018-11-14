@@ -19,22 +19,29 @@ var loss = false;
 
 startGame();
 
-function startGame() {
-    createCells();
-    drawAllCells();
-}
+startGame();
 
+changeSize.onclick = function () {
+    if (sizeInput.value >= 2 && sizeInput.value <= 20) {
+        size = sizeInput.value;
+        width = canvas.width / size - 6;
+        console.log(sizeInput.value);
+        canvasClean();
+        startGame();
+    }
+}
 
 function cell(row, coll) {
     this.value = 0;
-    this.x = coll * width + 6 * (coll + 1);
-    this.y = row * width + 6 * (row +1);
+    this.x = coll * width + 5 * (coll + 1);
+    this.y = row * width + 5 * (row + 1);
 }
 
 function createCells() {
-    for (var i = 0; i < size; i++) {
+    var i, j;
+    for(i = 0; i < size; i++) {
         cells[i] = [];
-        for (var j = 0; j < size; j++) {
+        for(j = 0; j < size; j++) {
             cells[i][j] = new cell(i, j);
         }
     }
@@ -59,7 +66,7 @@ function drawCell(cell) {
         case 4096 : ctx.fillStyle = '#ffbf00'; break;
         default : ctx.fillStyle = '#ff0080';
     }
-    
+
     ctx.fill();
     if (cell.value) {
         fontSize = width / 2;
