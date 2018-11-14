@@ -43,24 +43,23 @@ function createCells() {
 function drawCell(cell) {
     ctx.beginPath();
     ctx.rect(cell.x, cell.y, width, width);
-
-    switch (cell.value) {
-        case 0 : ctx.fillStyle = "#FF0000"; break;
-        case 2 : ctx.fillStyle = "#FF0033"; break;
-        case 4 : ctx.fillStyle = "#FF00A6"; break;
-        case 8 : ctx.fillStyle = "#DE00FF"; break;
-        case 16 : ctx.fillStyle = "#6F00FF"; break;
-        case 32 : ctx.fillStyle = "#003CFF"; break;
-        case 64 : ctx.fillStyle = "#00EBFF"; break;
-        case 128 : ctx.fillStyle = "#00FF8D"; break;
-        case 256 : ctx.fillStyle = "#00FF22"; break;
-        case 512 : ctx.fillStyle = "#7CFF00"; break;
-        case 1024 : ctx.fillStyle = "#F7FF00"; break;
-        case 2048 : ctx.fillStyle = "#FF7C00"; break;
-        case 4096 : ctx.fillStyle = "#FF2F00"; break;
-        default : ctx.fillStyle = "FFFFFF";
+    switch (cell.value){
+        case 0 : ctx.fillStyle = '#A9A9A9'; break;
+        case 2 : ctx.fillStyle = '#D2691E'; break;
+        case 4 : ctx.fillStyle = '#FF7F50'; break;
+        case 8 : ctx.fillStyle = '#ffbf00'; break;
+        case 16 : ctx.fillStyle = '#bfff00'; break;
+        case 32 : ctx.fillStyle = '#40ff00'; break;
+        case 64 : ctx.fillStyle = '#00bfff'; break;
+        case 128 : ctx.fillStyle = '#FF7F50'; break;
+        case 256 : ctx.fillStyle = '#0040ff'; break;
+        case 512 : ctx.fillStyle = '#ff0080'; break;
+        case 1024 : ctx.fillStyle = '#D2691E'; break;
+        case 2048 : ctx.fillStyle = '#FF7F50'; break;
+        case 4096 : ctx.fillStyle = '#ffbf00'; break;
+        default : ctx.fillStyle = '#ff0080';
     }
-
+    
     ctx.fill();
     if (cell.value) {
         fontSize = width / 2;
